@@ -23,7 +23,7 @@ height="250" width="500" frameBorder="0" title="Iframe Example"></iframe>
       echo " % ";
    }?> 
  <br>   
-<iframe src="https://thingspeak.com/channels/1502788/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"
+<iframe src="https://thingspeak.com/channels/1502788/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"height="250"
 width="500" frameBorder="0" title="Iframe Example"></iframe>
 <?php
    foreach ($user_data as $user) {
@@ -31,7 +31,7 @@ width="500" frameBorder="0" title="Iframe Example"></iframe>
       echo " C ";
    }?> 
  <br>
-<iframe src="https://thingspeak.com/channels/1502788/charts/3?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"
+<iframe src="https://thingspeak.com/channels/1502788/charts/3?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"height="250"
 width="500" frameBorder="0" title="Iframe Example"></iframe>
 <?php
    foreach ($user_data as $user) {
@@ -39,7 +39,7 @@ width="500" frameBorder="0" title="Iframe Example"></iframe>
       echo " FC ";
    }?> 
  <br>
- <iframe src="https://thingspeak.com/channels/1502788/charts/4?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"
+ <iframe src="https://thingspeak.com/channels/1502788/charts/4?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"height="250"
 width="500" frameBorder="0" title="Iframe Example"></iframe>
 <?php
    foreach ($user_data as $user) {

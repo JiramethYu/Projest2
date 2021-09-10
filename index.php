@@ -1,32 +1,53 @@
-<!doctype html>
-<html lang="en">
-  <head>
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta http-equiv="refresh" content="15; url="<?php echo $_SERVER['PHP_SELF']; ?>">
+ </head>
+										   
+<body>
    
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-    <title>Hello world!</title>
-    <script src="https://code.jquery.com/jquery-2.2.4.js"integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="crossorigin="anonymous"></script>
-  
-</head>
-  <body>
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
-   
-  </body>
-<script>
-    $(()=>{
-        //alert("Hello ");
-        
-        let url = "https://api.thingspeak.com/channels/1458765/feeds.json?results=1 "
-        $.get(url)
-        .done(function(data){
-          console.log(data);
-          console.log(data.channel);
-        })
-        .fail(function(erroe){
-        });
-    });
-</script>
-</html>
+<h1>62101456 Jirameth Yukachain</h1>
+ <?php
+$api_url = 'https://api.thingspeak.com/channels/1502788/feeds.json?api_key=UMT1JOXQHK75PNRS&results=1';
+$json_data = file_get_contents($api_url);
+$response_data = json_decode($json_data);
+$user_data = $response_data->feeds;
+$user_data = array_slice($user_data, 0);
+?>  
+<iframe src="https://thingspeak.com/channels/1502788/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15" 
+height="250" width="500" frameBorder="0" title="Iframe Example"></iframe>
+ <?php
+   foreach ($user_data as $user) {
+	echo "Humidity: ".$user->field1; 
+      echo " % ";
+   }?> 
+ <br>   
+<iframe src="https://thingspeak.com/channels/1502788/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"
+width="500" frameBorder="0" title="Iframe Example"></iframe>
+<?php
+   foreach ($user_data as $user) {
+	echo "Temperature: ".$user->field2; 
+      echo " C ";
+   }?> 
+ <br>
+<iframe src="https://thingspeak.com/channels/1502788/charts/3?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"
+width="500" frameBorder="0" title="Iframe Example"></iframe>
+<?php
+   foreach ($user_data as $user) {
+	echo "Light: ".$user->field3; 
+      echo " FC ";
+   }?> 
+ <br>
+ <iframe src="https://thingspeak.com/channels/1502788/charts/4?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"
+width="500" frameBorder="0" title="Iframe Example"></iframe>
+<?php
+   foreach ($user_data as $user) {
+	echo "i: ".$user->field4; 
+      echo " FC ";
+   }?> 
+ <br>                                                    
+<iframe src="https://thingspeak.com/channels/1502788/maps/channel_show" height="250" width="500" frameBorder="0" title="Iframe Example"></iframe>
+<br>         
+ </body>
+</html>   
